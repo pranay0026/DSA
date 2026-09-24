@@ -9,6 +9,6 @@ class Solution {
             }
             map.put(nums[i], i);
         }
-        return new int[] {}; // should never reach here as per problem constraints
+        return new int[] {}; 
     }
 }
