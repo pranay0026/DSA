@@ -1,15 +1,15 @@
 class Solution {
     List<List<Integer>> ans=new ArrayList<>();
     public List<List<Integer>> subsets(int[] nums) {
-        solve(nums,0,new ArrayList<>());
+        helper(new ArrayList<>(),0,nums);
         return ans;
     }
-    public void solve(int[] nums,int index,List<Integer> current){
-        ans.add(new ArrayList<>(current));
+    public void helper(List<Integer> sol,int index,int[] nums){
+        ans.add(new ArrayList<>(sol));
         for(int i=index;i<nums.length;i++){
-            current.add(nums[i]);
-            solve(nums,i+1,current);
-            current.remove(current.size()-1);
+            sol.add(nums[i]);
+            helper(sol,i+1,nums);
+            sol.remove(sol.size()-1);
         }
     }
 }
